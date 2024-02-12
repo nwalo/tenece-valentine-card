@@ -2,10 +2,28 @@ import gsap from "gsap";
 import "./scripts/index";
 import "./style.scss";
 
+gsap.config({
+  autoSleep: 60,
+  force3D: !false,
+});
+
+const envelope = document.querySelector(".envelope") as HTMLDivElement;
 const letter = document.querySelector(".letter") as HTMLDivElement;
 const top = document.querySelector(".top") as HTMLDivElement;
 const seal = document.querySelector(".seal") as HTMLDivElement;
 const spans = letter.querySelectorAll("span");
+
+gsap.set(envelope, {
+  scale: 0,
+  opacity: 0,
+});
+
+gsap.to(envelope, {
+  scale: 1,
+  opacity: 1,
+  duration: 2,
+  ease: "bounce.out",
+});
 
 let tl = gsap
   .timeline({ paused: true })

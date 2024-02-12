@@ -135,8 +135,9 @@ body {
 
   .seal {
     z-index: 10;
-    height: 80px;
-    width: 80px;
+    height: 64px;
+    width: 64px;
+    font-size: 12px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -25%);

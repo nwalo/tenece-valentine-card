@@ -1,7 +1,6 @@
 import gsap from "gsap";
 import "./scripts/index";
 import "./style.scss";
-
 gsap.config({
   autoSleep: 60,
   force3D: !false,
@@ -12,10 +11,16 @@ const letter = document.querySelector(".letter") as HTMLDivElement;
 const top = document.querySelector(".top") as HTMLDivElement;
 const seal = document.querySelector(".seal") as HTMLDivElement;
 const spans = letter.querySelectorAll("span");
+const buttons = Array.from(
+  document.querySelectorAll(".buttons  button")
+) as HTMLButtonElement[];
+
+gsap.set(buttons, {
+  scaleY: 0,
+});
 
 gsap.set(envelope, {
   scale: 0,
-  opacity: 0,
 });
 
 gsap.to(envelope, {
@@ -50,13 +55,15 @@ tl.to(letter, {
 
     rotateX: 0,
   })
-
   .to(spans, {
     opacity: 1,
     stagger: 0.05,
+  })
+  .to(buttons, {
+    scaleY: 1,
   });
 
-tl.duration(5);
+tl.duration(6);
 
 seal.addEventListener("click", () => {
   tl.play();

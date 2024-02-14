@@ -36,7 +36,12 @@ body {
   display: grid;
   place-items: center;
   gap: 1rem;
-  font-family: "Lugrasimo", cursive;
+  padding-top: 10rem;
+  font-family: "Petit Formal Script", cursive;
+}
+
+.my-name {
+  font-family: "Luckiest Guy", cursive;
 }
 
 .envelope {
@@ -138,6 +143,8 @@ body {
     height: 64px;
     width: 64px;
     font-size: 12px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -25%);
@@ -204,4 +211,12 @@ body {
       }
     }
   }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }

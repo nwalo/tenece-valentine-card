@@ -1,43 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>💞 Happy Valentine Team. 💞</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Luckiest+Guy&family=Petit+Formal+Script&family=Roboto:wght@100;300;400;500;700;900&family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> 💞 Be my valentine. 💞</title>
-</head>
+  <body>
+    <div id="app">
+      <!-- <div> -->
 
-<body>
-  <div id="app">
-    <!-- <div> -->
+      <div id="hurray" class="hide hurray">
+        <div>Enjoy your day!</div>
+        <dotlottie-player
+          src="https://lottie.host/86e25f2e-b07b-44a9-a651-8c4bd327566d/F3I7nDjyS3.json"
+          background="transparent"
+          speed="1"
+          style="width: 300px; height: 300px"
+          loop
+          autoplay
+        ></dotlottie-player>
+      </div>
+      <div
+        style="
+          color: red;
+          font-family: Inter;
+          font-weight: 900;
+          font-size: 72px;
+        "
+        class="hurray hide"
+      >
+        Enjoy your day!
+      </div>
+      <div class="envelope" id="envelope">
+        <div class="top"></div>
+        <div class="left"></div>
+        <div class="right"></div>
 
-    <div class="envelope">
-      <div class="top"></div>
-      <div class="left"></div>
-      <div class="right"></div>
-      <div class="letter">
-        <div class="letter-inner">
-          <p>
-            <span>W</span><span>i</span><span>l</span><span>l</span><span>
-            </span><span>y</span><span>o</span><span>u</span><span>
-            </span><span>b</span><span>e</span><span>
-            </span><span>m</span><span>y</span><span>
-            </span><span>v</span><span>a</span><span>l</span><span>e</span><span>n</span><span>t</span><span>i</span><span>n</span><span>e</span><span>?</span>
-          </p>
+        <div class="letter" id="envelope">
+          <div class="letter-inner">
+            <p>
+              <span>H</span><span>a</span><span>p</span><span>p</span
+              ><span>y</span><span> </span><span>v</span><span>a</span
+              ><span>l</span><span>e</span><span>n</span><span>t</span
+              ><span>i</span><span>n</span><span>e</span> <span></span>
+              <br />
+              <span style="text-align: center; display: block"
+                ><span>F</span><span>r</span><span>o</span><span>m</span></span
+              >
+              <span style="text-align: center; display: block" class="my-name"
+                ><span>N</span><span>w</span><span>a</span><span>l</span
+                ><span>o</span></span
+              >
+            </p>
+          </div>
         </div>
+
+        <div class="seal">OPEN</div>
+      </div>
+      <div class="buttons">
+        <button id="clickbtn">Share more love 🎉</button>
       </div>
 
-      <div class="seal">OPEN</div>
+      <!-- </div> -->
     </div>
-    <div class="buttons">
-      <button>SURE THING! 😄💘</button>
-      <button>YEP, I'M IN! 🙃💖</button>
-    </div>
+    <script type="module" src="/src/main.ts"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+    <script>
+      const btn = document.getElementById("clickbtn");
+      const hurray = document.getElementsByClassName("hurray");
+      const envelope = document.getElementById("envelope");
 
-    <!-- </div> -->
-  </div>
-  <script type="module" src="/src/main.ts"></script>
-</body>
-
+      btn.addEventListener("click", () => {
+        for (let i = 0; i < hurray.length; i++) {
+          hurray[i].classList.remove("hide");
+          hurray[i].classList.add("show");
+        }
+        envelope.classList.add("hide");
+        btn.classList.add("hide");
+      });
+    </script>
+  </body>
 </html>
